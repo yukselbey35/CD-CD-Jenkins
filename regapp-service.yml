@@ -1,0 +1,20 @@
+#containerPort on the deployment yaml file and 
+#targetPort must be same on service yaml
+
+#under the spec section labels must match
+#with deployment metadata>labels
+apiVersion: v1
+kind: Service
+metadata:
+  name: yukselbey35-regapp
+  labels:
+    app: regapp 
+spec:
+  selector:
+    app: regapp 
+
+  ports:
+    - port: 8080
+      targetPort: 8080
+
+  type: LoadBalancer
