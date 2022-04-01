@@ -767,7 +767,7 @@
                   <td class="align-middle"><span class="text-light"><i class="bi bi-facebook"></i></span></td>
                   <td class="align-middle"><span class="text-light"><i class="bi bi-twitter"></i></span></td>
                   <td class="align-middle"><span class="text-light"><i class="bi bi-instagram"></i></span></td>
-                  <td class="align-middle"><span class="text-light"><i class="bi bi-youtube"></i></span></td>
+                  <td href="https://www.youtube.com/" class="align-middle"><span class="text-light"><i class="bi bi-youtube"></i></span></td>
                   <td href="https://www.linkedin.com/in/yuksel-a-b032a2217/" class="align-middle"><span class="text-light"><i class="bi bi-linkedin"></i></span></td>
                   <td class="align-middle"><span class="text-light"><i class="bi bi-google"></i></span></td>
                   <td class="align-middle"><span class="text-light"><i class="bi bi-github"></i></span></td>
