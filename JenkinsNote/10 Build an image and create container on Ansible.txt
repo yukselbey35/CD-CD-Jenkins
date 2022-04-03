@@ -1,9 +1,0 @@
-First we install Docker onto Ansible as an ansadmin user
-[ansadmin@ansible-server docker]$ sudo yum install docker -y
-add ansadmin to docker group
-[ansadmin@ansible-server docker]$ sudo usermod -aG docker ansadmin
-
-Run docker on Ansible
-[ansadmin@ansible-server docker]$ sudo service docker start
-
-We create image and build container manually
