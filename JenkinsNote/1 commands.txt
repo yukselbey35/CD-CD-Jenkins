@@ -1,4 +1,4 @@
-Now let us install Jenkins on the centos-host machine and configure it to run on port 8090 instead of the default port 8080.
+Now let us install Jenkins on the centos-host machine and configure it to run on port 8080 instead of the default port 8080.
 You can refer to the Jenkins Installation Docs located above the terminal.
 
 sudo yum install epel-release -y
