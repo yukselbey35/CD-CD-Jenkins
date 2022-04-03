@@ -1,0 +1,16 @@
+We need to integrate Ansible with Jenkins
+So that Jenkins able to copy artifact to Ansible, 
+Ansible can create Image and Deploy to container to dockerhub
+publish over SSH
+
+Manage Jenkins > Configure System > publish over SSH
+dockerhost already added. we need to add Ansible
+add name
+add privateIP address as a Hostname
+add username: ansadmin
+
+When we done with this we will create new job copy previous job so 
+we can edit and use it
+
+Under the Post build-actions
+SSH server will be ansible-server

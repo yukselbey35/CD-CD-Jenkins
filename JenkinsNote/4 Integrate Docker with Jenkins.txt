@@ -1,0 +1,52 @@
+we are in the process of setting of the pipelinebto deploy arficats to docker contaner
+We will build code and deploy in the tomcat container
+To do this
+
+We need to integrate dockerhost to jenkins 
+to do this
+1) Create a dockeradmin user on docker host and add the docker admin group
+2) We would copy artifact from Jenkins to Dockerhost for that we need to use 
+"Publish Over SSH" plugin
+3) Add Dockerhost to oJenkins "configure systems"
+
+1.1) sudo su -
+useradd dockeradmin
+passwd dockeradmin
+ADD the user dockeradmin ADMIN GROUP
+usermod -aG docker dockeradmin
+
+EC2 instances disable for password base auth we should enable it
+To Change EC2 auth
+vi /etc/ssh/sshd_config
+
+# To disable tunneled clear text passwords, change to no here!
+PasswordAuthentication yes
+#PermitEmptyPasswords no
+#PasswordAuthentication no
+
+Then Restart
+service sshd reload
+
+After Create the dockeradmin we will add plugin to jenkins
+Manage Jenkins > Plugin Manager > publish over SSH and install it
+this plugin Send build artifacts over SSH
+We need to configure docker in the jenkins
+
+Manage Jenkins > configure systems > 
+
+Set admin user  dockeradmin and password and test and save it
+
+WE INTEGRATED dockeradmin TO Jenkins
+I CAN ABLE TO auth from Jenkins TO Dockerhost AS A dockeradmin user
+i have INTEGRATED my dockerhost with jenkins
+
+
+
+
+
+
+
+
+
+
+

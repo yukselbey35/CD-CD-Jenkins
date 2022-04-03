@@ -1,0 +1,9 @@
+We create the war file on Dockerhost server in dockeradmin home directory
+We build and run it
+This should be Automatically
+
+WE WANT TO AUTOMATE END TO END PIPELINE 
+ONCE WE COMMIT OUR CODE ONTO github, IT SHOULD ABLE TO Build IT
+AND CREATE artifact AND COPYING arficats ONTO Dockerhost 
+CREATING DOCKER IMAGE AND CREATING container Automatically 
+

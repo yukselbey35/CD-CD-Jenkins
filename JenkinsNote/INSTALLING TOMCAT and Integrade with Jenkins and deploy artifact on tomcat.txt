@@ -1,0 +1,64 @@
+INSTALLING TOMCAT and Integrade with Jenkins and deploy artifact on tomcat
+
+Create the EC2
+install java then tomcat
+
+Download tomcat and install into opt/ directory
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.59/bin/apache-tomcat-9.0.59.tar.gz
+
+extract 
+tar -zxvf apache-tomcat-9.0.59.tar.gz mv apache-tomcat-9.0.59 tomcat
+after the extract to start tomcat we need to go to bin directory use startup.sh
+change the directory name as tomcat
+
+cd opt/tomcat/bin/
+the to run tomcat
+bin]# ./startup.sh
+
+To access tomcat GUI we need to edit xml file
+
+find / -name context.xml
+/opt/tomcat/conf/context.xml
+Modify this to use GUI
+/opt/tomcat/webapps/host-manager/META-INF/context.xml
+/opt/tomcat/webapps/manager/META-INF/context.xml
+
+After change the xml restart the tomcat to upgrade the user info goto conf directory
+
+/opt/tomcat/conf
+[root@ip-conf]# ls
+Catalina  catalina.policy  catalina.properties  context.xml  jaspic-providers.xml  jaspic-providers.xsd  logging.properties  server.xml  tomcat-users.xml  tomcat-users.xsd  web.xml
+
+
+Add users 
+conf]# vi tomcat-users.xml
+
+ <role rolename="manager-gui"/>
+ <role rolename="manager-script"/>
+ <role rolename="manager-jmx"/>
+ <role rolename="manager-status"/>
+ <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+ <user username="deployer" password="deployer" roles="manager-script"/>
+ <user username="tomcat" password="s3cret" roles="manager-gui"/>
+
+
+ln -s /opt/tomcat/bin/startup.sh /usr/local/bin/tomcatup
+ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
+restart tomcat
+
+Then open Jenkins to install Manage Jenkins > Manage Plugins > "Deploy to container" plugin
+Then Manage Credentials > Add Credentials > Kind > 
+Username
+Password
+
+
+
+
+
+
+
+
+
+
+
+

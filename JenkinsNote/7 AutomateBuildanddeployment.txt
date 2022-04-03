@@ -1,0 +1,11 @@
+6AutomateBuild and deployment 
+
+(Build Settings) > Post Build Actions
+cd /opt/docker; 
+docker build -t regapp:v1 .;
+docker run -d --name registerapp -p 8087:8080 regapp:v1 
+
+
+Delete all container and images to see Automated Build image and container
+ docker container prune 
+ docker image prune -a
